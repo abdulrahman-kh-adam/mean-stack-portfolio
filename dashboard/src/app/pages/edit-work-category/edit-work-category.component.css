@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  color: white;
+}
+
+.form-group {
+  margin: 15px 0;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+button {
+  background-color: #292f36;
+  border: 1px solid white;
+}
+
+button:hover {
+  background-color: #0d6efd;
+  border: 1px solid #0d6efd;
+}
+
+.file-upload {
+  margin-left: 83px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.msg {
+  color: red;
+  font-size: 15px;
+}

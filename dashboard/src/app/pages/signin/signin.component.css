@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 100vh;
+  padding-bottom: 150px;
+}
+
+button {
+  background-color: #292f36;
+  border: 1px solid white;
+}
+
+button:hover {
+  background-color: #0d6efd;
+  border: 1px solid #0d6efd;
+}
+
+input {
+  padding: 5px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.msg {
+  color: red;
+  font-size: 15px;
+}

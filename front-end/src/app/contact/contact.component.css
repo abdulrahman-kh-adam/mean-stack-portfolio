@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+
+form {
+  margin-top: 25px;
+}
+
+.form-group {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  font-size: 15px;
+  height: 35px;
+  padding: 0 8px;
+}
+
+.form-group a {
+  background-color: #292f36;
+  border: 1px solid white;
+}
+
+.form-group a:hover {
+  background-color: #0d6efd;
+  border: 1px solid #0d6efd;
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.msg {
+  color: red;
+  font-size: 15px;
+}

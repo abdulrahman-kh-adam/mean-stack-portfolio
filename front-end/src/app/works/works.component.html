@@ -1,0 +1,37 @@
+<div class="container">
+  @if(!fail){ @for(category of works; track $index){ @if(category.worksMap.size
+  > 0 && category.name !== 'Other'){
+  <app-section-title [name]="category.name + ' Projects'" />
+  <div class="projects-container">
+    @for(project of category.worksArray; track $index){
+    <app-project
+      [title]="project.name"
+      [img]="url + '/' + project.image"
+      [github]="project.github"
+      [preview]="project.preview"
+    >
+      {{ project.description }}
+    </app-project>
+    }
+  </div>
+  } } @for(category of works; track $index){ @if(category.worksMap.size > 0 &&
+  category.name === 'Other'){
+  <app-section-title [name]="category.name + ' Projects'" />
+  <div class="projects-container">
+    @for(project of category.worksArray; track $index){
+    <app-project
+      [title]="project.name"
+      [img]="url + '/' + project.image"
+      [github]="project.github"
+      [preview]="project.preview"
+    >
+      {{ project.description }}
+    </app-project>
+    }
+  </div>
+  } } } @else {
+  <div class="fail-message">
+    <p>{{ failMessage }}</p>
+  </div>
+  }
+</div>

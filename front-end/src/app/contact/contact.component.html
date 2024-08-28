@@ -1,0 +1,67 @@
+<div class="container ubuntu">
+  <app-section-title name="Contact" />
+  <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="Enter your name..."
+        formControlName="username"
+      />
+      @if(contactForm.get('username')?.errors?.['required'] &&
+      contactForm.get('username')?.touched){
+      <div class="msg">Username is required</div>
+      }
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter your email..."
+        formControlName="email"
+      />
+      @if(contactForm.get('email')?.errors?.['required'] &&
+      contactForm.get('email')?.touched){
+      <div class="msg">Email is required</div>
+      } @else if (contactForm.get('email')?.errors?.['email'] &&
+      contactForm.get('email')?.touched){
+      <div class="msg">Please provide a valid E-mail</div>
+      }
+    </div>
+    <div class="form-group">
+      <label for="subject">Subject:</label>
+      <input
+        type="text"
+        id="subject"
+        placeholder="Enter the email subject..."
+        formControlName="subject"
+      />
+      @if(contactForm.get('subject')?.errors?.['required'] &&
+      contactForm.get('subject')?.touched){
+      <div class="msg">Email subject is required</div>
+      }
+    </div>
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea
+        id="message"
+        placeholder="Enter your message..."
+        formControlName="message"
+      ></textarea>
+      @if(contactForm.get('message')?.errors?.['required'] &&
+      contactForm.get('message')?.touched){
+      <div class="msg">Message is required</div>
+      }
+    </div>
+    <div class="form-group">
+      <a class="btn btn-primary" (click)="submitForm()">Send</a>
+    </div>
+    @if(done){
+    <div class="alert alert-success text-center">
+      Message sent successfully!
+    </div>
+    }
+  </form>
+</div>

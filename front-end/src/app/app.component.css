@@ -1,0 +1,9 @@
+.main-container {
+  height: 100vh;
+  background-color: #292f36;
+  width: 100%;
+}
+
+.no-vh {
+  height: fit-content;
+}

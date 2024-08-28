@@ -1,0 +1,41 @@
+<div class="container">
+  @if(!fail){
+  <div class="front-end">
+    <app-section-title name="Front End Skills" />
+    <ul>
+      @for(skill of frontEndSkills; track $index){
+      <li>
+        <img [src]="url + '/' + skill.image" alt="" />
+        <p>{{ skill.name }}</p>
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="back-end">
+    <app-section-title name="Back End Skills" />
+    <ul>
+      @for(skill of backEndSkills; track $index){
+      <li>
+        <img [src]="url + '/' + skill.image" alt="" />
+        <p>{{ skill.name }}</p>
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="other">
+    <app-section-title name="Other Software Skills" />
+    <ul>
+      @for(skill of otherSkills; track $index){
+      <li>
+        <img [src]="url + '/' + skill.image" alt="" />
+        <p>{{ skill.name }}</p>
+      </li>
+      }
+    </ul>
+  </div>
+  } @else {
+  <div class="fail-message">
+    <p>{{ failMessage }}</p>
+  </div>
+  }
+</div>

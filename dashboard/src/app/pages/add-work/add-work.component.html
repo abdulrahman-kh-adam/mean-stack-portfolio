@@ -1,0 +1,92 @@
+<div class="container">
+  <app-section-title name="Add Work" />
+  <form [formGroup]="myForm">
+    <div class="form-group d-flex flex-column align-items-center">
+      <label for="skillName">Work Name:</label>
+      <input
+        type="text"
+        placeholder="Enter work name"
+        formControlName="workName"
+      />
+      @if(myForm.get('workName')?.errors?.['required'] &&
+      myForm.get('workName')?.touched){
+      <div class="msg">Work name is required</div>
+      }
+    </div>
+    <div class="form-group d-flex flex-column align-items-center">
+      <label for="workDesciption">Work Description:</label>
+      <input
+        type="text"
+        placeholder="Enter work Description"
+        formControlName="workDescription"
+      />
+      @if(myForm.get('workDescription')?.errors?.['required'] &&
+      myForm.get('workDescription')?.touched){
+      <div class="msg">Work description is required</div>
+      }
+    </div>
+    <div class="form-group d-flex flex-column align-items-center">
+      <label for="workGithub">Github:</label>
+      <input
+        type="text"
+        placeholder="Enter work github link"
+        formControlName="workGithub"
+      />
+      @if(myForm.get('workGithub')?.errors?.['required'] &&
+      myForm.get('workGithub')?.touched){
+      <div class="msg">Work github link is required</div>
+      }
+    </div>
+    <div class="form-group d-flex flex-column align-items-center">
+      <label for="workPreview">Preview:</label>
+      <input
+        type="text"
+        placeholder="Enter work preview link"
+        formControlName="workPreview"
+      />
+      @if(myForm.get('workPreview')?.errors?.['required'] &&
+      myForm.get('workPreview')?.touched){
+      <div class="msg">Work preview link is required</div>
+      }
+    </div>
+    <div class="form-group d-flex flex-column align-items-center">
+      <label for="workImage">Work Image:</label>
+      <input
+        type="file"
+        placeholder="Upload work image"
+        class="file-upload"
+        formControlName="workImage"
+        id="workImage"
+      />
+      @if(myForm.get('workImage')?.errors?.['required'] &&
+      myForm.get('workImage')?.touched){
+      <div class="msg">Work Image is required</div>
+      }
+    </div>
+    <div class="form-group d-flex flex-column align-items-center">
+      <label for="workCategory">Work Category:</label>
+      <select formControlName="workCategory">
+        @for(category of categories; track $index){
+        <option [value]="category.name">{{ category.name }}</option>
+        }
+      </select>
+    </div>
+  </form>
+  <button
+    class="btn btn-primary mt-3"
+    (click)="addSkill()"
+    [disabled]="
+      myForm.get('workName')?.errors ||
+      myForm.get('workCategory')?.errors ||
+      myForm.get('workImage')?.errors ||
+      myForm.get('workDescription')?.errors
+    "
+  >
+    Add Work
+  </button>
+  @if(fail){
+  <div class="alert alert-danger mt-2 text-center">
+    Something wrong happened. Please try again. Error: {{ failMessage }}
+  </div>
+  }
+</div>

@@ -1,0 +1,33 @@
+.info {
+  width: 250px;
+  height: 350px;
+  background-color: #1a1e23;
+  border-radius: 70px;
+  padding: 40px;
+  color: white;
+  margin-left: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.col {
+  text-align: left;
+}
+
+.col.number {
+  font-size: 48px;
+  color: #12f7d6;
+}
+
+.col.text p {
+  width: 110px;
+  margin: 0;
+}

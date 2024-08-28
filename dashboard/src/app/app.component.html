@@ -1,0 +1,8 @@
+<div class="main-container" [class.skills]="skillsPath">
+  @if(!rootPath){
+  <app-header />
+  }
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

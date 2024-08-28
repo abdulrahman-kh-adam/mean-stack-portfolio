@@ -1,0 +1,53 @@
+<div class="container">
+  <app-section-title name="Edit Skill" />
+  <form [formGroup]="myForm">
+    <div class="form-group d-flex flex-column align-items-center">
+      <label for="skillName">Skill Name:</label>
+      <input
+        type="text"
+        placeholder="Enter skill name"
+        formControlName="skillName"
+      />
+      @if(myForm.get('skillName')?.errors?.['required'] &&
+      myForm.get('skillName')?.touched){
+      <div class="msg">Skill Name is required</div>
+      }
+    </div>
+    <div class="form-group d-flex flex-column align-items-center">
+      <label for="skillImage">Skill Image:</label>
+      <input
+        type="file"
+        placeholder="Upload skill image"
+        class="file-upload"
+        formControlName="skillImage"
+        id="skillImage"
+      />
+      @if(myForm.get('skillImage')?.errors?.['required'] &&
+      myForm.get('skillImage')?.touched){
+      <div class="msg">Skill Image is required</div>
+      }
+    </div>
+    <div class="form-group d-flex flex-column align-items-center">
+      <label for="skillCategory">Skill Category:</label>
+      <select formControlName="skillCategory">
+        <option value="FrontEnd">Front End</option>
+        <option value="BackEnd">Back End</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+  </form>
+  <button
+    class="btn btn-primary mt-3"
+    (click)="submitSkill()"
+    [disabled]="
+      myForm.get('skillName')?.errors || myForm.get('skillImage')?.errors
+    "
+  >
+    Save Skill
+  </button>
+  @if(fail){
+  <div class="alert alert-danger mt-2 text-center">
+    Something wrong happened. Please try again. Error: {{ failMessage }}
+  </div>
+  }
+</div>

@@ -1,0 +1,22 @@
+<div class="cv">
+  <img src="assets/images/profile.png" class="profile" alt="profile photo" />
+  <div class="name">{{ name }}</div>
+  <div class="job">{{ title }}</div>
+  <ul>
+    <li>
+      <img src="assets/images/mail_icon.png" alt="mail" />
+      <span>{{ email }}</span>
+    </li>
+    <li>
+      <img src="assets/images/location_icon.png" alt="location" />
+      <span>{{ location }}</span>
+    </li>
+    <li>
+      <img src="assets/images/work_icon.png" alt="work" />
+      <span>{{ work }}</span>
+    </li>
+  </ul>
+  <div class="download">
+    <a class="ubuntu" [href]="cv" target="_blank">Download CV</a>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.tag {
+  font-family: 'IBM Plex Mono', monospace;
+  color: #98faec;
+  font-size: 14px;
+}
+
+.h1 {
+  color: white;
+}
+
+.h1 .name {
+  color: #12f7d6;
+}
+
+.p {
+  color: white;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+.p p {
+  margin-bottom: 0;
+}
+
+.talk {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.talk p {
+  margin-bottom: 0;
+  margin-right: 15px;
+}
+
+.talk img {
+  cursor: pointer;
+}

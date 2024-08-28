@@ -1,0 +1,29 @@
+<div class="container">
+  <app-section-title name="Messages" />
+  <div class="messages">
+    @if(messagesExist){ @for(message of messages; track $index){
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">{{ message.subject }}</h5>
+        <h6 class="card-subtitle mb-2">From: {{ message.name }}</h6>
+        <p class="card-text">
+          {{ message.body }}
+        </p>
+      </div>
+      <p class="card-link ms-3">Email: {{ message.email }}</p>
+      <button
+        (click)="registerMessageId(message._id ? message._id : null)"
+        class="btn btn-primary"
+      >
+        Delete
+      </button>
+    </div>
+    } } @else {
+    <p>No messages found.</p>
+    } @if(fail){
+    <div class="alert alert-danger mt-2 text-center">
+      Something wrong happened. Please try again. Error: {{ failMessage }}
+    </div>
+    }
+  </div>
+</div>

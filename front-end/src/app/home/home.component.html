@@ -1,0 +1,40 @@
+<div class="home">
+  @if(homeInfo){
+  <div class="container">
+    <div class="row title">
+      <div class="title ubuntu">
+        <h1>{{ homeInfo.mainTitle }}</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mono">
+        <app-home-cv
+          [name]="homeInfo.name"
+          [title]="homeInfo.mainTitle"
+          [email]="homeInfo.email"
+          [location]="homeInfo.location"
+          [work]="homeInfo.job"
+        />
+      </div>
+
+      <div class="col">
+        <app-home-info1
+          [name]="homeInfo.name"
+          [title]="homeInfo.mainTitle"
+          [desc]="homeInfo.desc"
+        />
+      </div>
+
+      <div class="col">
+        <app-home-info2
+          [langs]="homeInfo.langs"
+          [tools]="homeInfo.tools"
+          [years]="homeInfo.years"
+        />
+      </div>
+    </div>
+  </div>
+  } @else {
+  <p>Loading...</p>
+  }
+</div>

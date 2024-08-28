@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  color: white;
+}
+
+.messages {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.message {
+  margin-bottom: 10px;
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message-info {
+  display: flex;
+  gap: 25px;
+}
+
+.card {
+  background-color: #454c53;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  height: 200px;
+  text-overflow: ellipsis;
+  overflow-y: auto;
+}
+
+button {
+  background-color: #292f36;
+  border: 1px solid white;
+  width: 150px;
+  align-self: center;
+  margin-bottom: 15px;
+}
+
+button:hover {
+  background-color: #0d6efd;
+  border: 1px solid #0d6efd;
+}

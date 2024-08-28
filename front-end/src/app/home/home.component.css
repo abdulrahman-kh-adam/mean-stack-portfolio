@@ -1,0 +1,17 @@
+.home .container {
+  height: calc(100vh - 100px);
+}
+
+.title h1 {
+  color: #98faec;
+  font-size: 65px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.row:not(.title) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+}

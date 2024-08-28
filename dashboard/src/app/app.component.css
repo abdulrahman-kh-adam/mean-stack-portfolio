@@ -1,0 +1,10 @@
+.main-container {
+  height: 100vh;
+  background-color: #292f36;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.skills {
+  height: fit-content;
+}

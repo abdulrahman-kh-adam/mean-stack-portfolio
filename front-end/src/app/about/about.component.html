@@ -1,0 +1,30 @@
+<div class="about">
+  @if(aboutInfo){
+  <div class="container">
+    <div class="row main">
+      <div class="col left">
+        <div>
+          <div class="row">
+            <div class="title ubuntu">
+              <h1>About Me</h1>
+            </div>
+          </div>
+          <div class="row mono info mt-4">
+            <div class="tag mb-2">&lt;p&gt;</div>
+            <h1>Hello!</h1>
+            <p>
+              {{ aboutInfo.description }}
+            </p>
+            <div class="tag">&lt;/p&gt;</div>
+          </div>
+        </div>
+      </div>
+      <div class="col right">
+        <img [src]="url + '/' + aboutInfo.image" alt="" />
+      </div>
+    </div>
+  </div>
+  } @else {
+  <p>Loading...</p>
+  }
+</div>
